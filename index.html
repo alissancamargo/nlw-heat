@@ -17,34 +17,60 @@
         <span>
           <img src="imagens/selo.svg" alt="Selo Rocketseat" />
         </span>
-        <img src="https://lorempixel.com/185/185/people/" alt="Foto Pessoal" />
+        <img src="imagens/Foto.jpg" alt=" Foto Pessoal" />
       </div>
-      <h1>Alissan Camargo</h1>
-      <a href="https:instagram.com/alissancamargo">
+      <h1 id="userName">Alissan Camargo</h1>
+      <a href="https://github.com/alissancamargo" target="_blank">
         <img src="imagens/github.svg" alt="Github" />
         alissancamargo
       </a>
       <p>An instructor focused on helping pople start programming for web</p>
-      <ul>
-        <li>
+      <ul id="socialLinks">
+        <li class="youtube">
           <a href="https://youtube.com/" target="_blank">
             <img src="imagens/youtube.svg" alt="Logo Youtube">
+          </a>
         </li>
-        <li>
+        <li class="instagram">
           <a href="https://instagram.com/alissancamargo" target="_blank">
             <img src="imagens/instagram.svg" alt="Logo Instagram">
+          </a>
         </li>
-        <li>
-          <a href="https://fabebook.com/alissans2" target="_blank">
+        <li class="facebook">
+          <a href="https://facebook.com/alissans2" target="_blank">
             <img src="imagens/facebook.svg" alt="Logo Facebook">
+          </a>
         </li>
-        <li>
+        <li class="twitter">
           <a href="https://twitter.com/alissancamargo" target="_blank">
             <img src="imagens/twitter.svg" alt="Logo twitter">
+          </a>
         </li>
       </ul>
     </div>
   </main>
+
+  <script>
+    const LinksSocialMedia = {
+      github: 'jakeliny',
+      youtube: 'jakelinygracielly',
+      instagram: 'jakeliny.gracielly',
+      facebook: 'maykybrito',
+      twitter: 'jakelinytec'
+    }
+
+    function changeSocialMediaLinks() {
+      for (let li of socialLinks.children) {
+        let social = li.getAttribute('class')
+
+        li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+      }
+    }
+
+    changeSocialMediaLinks()
+
+  </script>
+
 </body>
 
 </html>
