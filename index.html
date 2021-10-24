@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="pt_BR">
 
 <head>
   <title>Alissan K. Camargo - DoWhile 2021</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js">
 </head>
 
 <body>
-  <main>
-    <div class="content">
+  <main class="main">
+    <div id="faixa" class="faixa"></div>
+    <div class="furo"></div>
+    <div class="desktop"></div>
+    <div id="content" class="content">
       <div class="avatar">
         <span>
           <img src="imagens/selo.svg" alt="Selo Rocketseat" />
         </span>
-        <img src="imagens/Foto.jpg" alt=" Foto Pessoal" />
+        <img id="userImage" src="http://lorempixel.com/185/185/people/" alt=" Foto Pessoal" />
       </div>
-      <h1 id="userName">Alissan Camargo</h1>
-      <a href="https://github.com/alissancamargo" target="_blank">
+      <h1 id="userName">Mayk Brito</h1>
+      <a id="userLink" href="https://github.com/alissancamargo" target="_blank">
         <img src="imagens/github.svg" alt="Github" />
-        alissancamargo
+        <span id="userLogin">Mayk Britto</span>
       </a>
-      <p>An instructor focused on helping pople start programming for web</p>
+      <p id="userBio">An instructor focused on helping pople start programming for web</p>
       <ul id="socialLinks">
         <li class="youtube">
           <a href="https://youtube.com/" target="_blank">
@@ -47,28 +53,17 @@
           </a>
         </li>
       </ul>
+      <img class="doWhile" src="imagens/doWhile.svg" alt="Logo DoWhile">
     </div>
   </main>
 
-  <script>
-    const LinksSocialMedia = {
-      github: 'jakeliny',
-      youtube: 'jakelinygracielly',
-      instagram: 'jakeliny.gracielly',
-      facebook: 'maykybrito',
-      twitter: 'jakelinytec'
-    }
-
-    function changeSocialMediaLinks() {
-      for (let li of socialLinks.children) {
-        const social = li.getAttribute('class')
-
-        li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
-      }
-    }
-
-    changeSocialMediaLinks()
-
+  <script src="main.js"></script>
+  <script src="vanilla-tilt.js"></script>
+  <script type="text/javascript">
+    VanillaTilt.init(document.getElementById("content"), {
+      max: 7,
+      speed: 300
+    });
   </script>
 
 </body>

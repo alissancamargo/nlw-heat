@@ -18,9 +18,10 @@ body {
 }
 
 main {
-  background: url(imagens/background.png);
-  width: 375px;
-  height: 812px;
+  background: url(imagens/background.png) no-repeat center/cover;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
 }
 
 .content {
@@ -29,6 +30,30 @@ main {
   margin-right: auto;
   text-align: center;
   color: var(--grey);
+}
+
+.faixa {
+  width: 64px;
+  height: 125px;
+  background: url(imagens/faixa.png) no-repeat center;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  align-self: center;
+  left: calc(50vw - 32px);
+  right: calc(50vw - 32px);
+}
+
+.furo {
+  width: 80px;
+  height: 8px;
+  background-color: #121214;
+  position: absolute;
+  top: 122px;
+  z-index: 1;
+  align-self: center;
+  left: calc(50vw - 40px);
+  right: calc(50vw - 40px);
 }
 
 .avatar {
@@ -73,7 +98,7 @@ p {
 }
 
 ul {
-  margin-top: 4rem;
+  margin-top: 2rem;
 
   list-style: none;
   padding: 0;
@@ -83,4 +108,58 @@ ul {
 
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.doWhile {
+  width: 100%;
+  height: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 560px) {
+  .furo {
+    opacity: 0;
+  }
+
+  .faixa {
+    opacity: 0;
+  }
+
+  .doWhile {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 560px) {
+  .main {
+    background: none !important;
+    background-color: #121214 !important;
+    z-index: 1;
+    position: relative;
+  }
+
+  .desktop {
+    background: url(imagens/gradiente.png) no-repeat center / cover !important;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+  }
+
+  .content {
+    min-width: 358px;
+    max-width: 358px;
+    background: url(imagens/background.png) no-repeat center/cover !important;
+    margin-top: -30px;
+    height: 540px;
+    background: none;
+    position: absolute;
+    top: 130px;
+    left: calc(50vw - 177px);
+    justify-content: flex-start;
+  }
+
+  .content .avatar {
+    margin-top: 50px;
+  }
 }
